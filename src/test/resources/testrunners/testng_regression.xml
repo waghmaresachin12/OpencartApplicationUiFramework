@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--thread-count is too tell how many browser to be open for parallel run-->
+
+<suite name="Open Cart Regression Suite" verbose="3" thread-count="5" parallel="tests">
+    
+<!--    we need to add listeners to get Reports-->
+    <listeners>
+        <listener class-name="com.qa.opencart.listeners.ExtentReportListener"></listener>
+        <listener class-name="com.qa.opencart.listeners.TestAllureListener"></listener>
+        <listener class-name="com.qa.opencart.listeners.AnnotationTransformer"></listener>
+    </listeners>
+    
+
+<!-- It is good practice to have separate class in separate test, don't add all classes in single test -->
+    <test name="Login Page Test chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.qa.opencart.tests.LoginPageTest" />
+
+        </classes>
+    </test>
+
+<!--    <test name="Login Page Test firefox">-->
+<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.qa.opencart.tests.LoginPageTest" />-->
+
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Login Page Test edge">-->
+<!--        <parameter name="browser" value="edge"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.qa.opencart.tests.LoginPageTest" />-->
+
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Accounts Page Test">-->
+<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.qa.opencart.tests.AccountsPageTest" />-->
+
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Search Result Page Test">-->
+<!--        <parameter name="browser" value="chrome"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.qa.opencart.tests.SearchResultsTest" />-->
+
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="ProductInfo Page Test">-->
+<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.qa.opencart.tests.ProductInfoTest" />-->
+
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Reg Page Test">-->
+<!--        <parameter name="browser" value="chrome"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.qa.opencart.tests.RegPageTest" />-->
+
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>
