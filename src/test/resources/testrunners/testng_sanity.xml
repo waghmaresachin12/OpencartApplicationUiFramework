@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--thread-count is too tell how many browser to be open for parallel run-->
+
+<suite name="Open Cart Sanity Suite" verbose="3" thread-count="5" parallel="tests">
+
+    <test name="Login Page Test chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.qa.opencart.tests.LoginPageTest" />
+
+        </classes>
+    </test>
+
+</suite>

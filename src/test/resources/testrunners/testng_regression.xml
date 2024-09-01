@@ -38,13 +38,13 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-<!--    <test name="Accounts Page Test">-->
-<!--        <parameter name="browser" value="firefox"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="com.qa.opencart.tests.AccountsPageTest" />-->
+    <test name="Accounts Page Test">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="com.qa.opencart.tests.AccountsPageTest" />
 
-<!--        </classes>-->
-<!--    </test>-->
+        </classes>
+    </test>
 
 <!--    <test name="Search Result Page Test">-->
 <!--        <parameter name="browser" value="chrome"></parameter>-->
