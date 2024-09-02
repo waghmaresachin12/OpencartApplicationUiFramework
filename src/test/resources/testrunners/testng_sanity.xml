@@ -5,7 +5,14 @@
 
 <suite name="Open Cart Sanity Suite" verbose="3" thread-count="5" parallel="tests">
 
-    <test name="Login Page Test chrome">
+    <!--    we need to add listeners to get Reports-->
+    <listeners>
+        <listener class-name="com.qa.opencart.listeners.ExtentReportListener"></listener>
+        <listener class-name="com.qa.opencart.listeners.TestAllureListener"></listener>
+        <listener class-name="com.qa.opencart.listeners.AnnotationTransformer"></listener>
+    </listeners>
+
+    <test name="Login Page Test chrome_sanity">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="com.qa.opencart.tests.LoginPageTest" />
