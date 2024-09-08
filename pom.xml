@@ -132,9 +132,11 @@
           <forkCount>3</forkCount>
           <reuseForks>true</reuseForks>
           <suiteXmlFiles>
-<!--            <suiteXmlFile>src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>-->
-             <!--suppress UnresolvedMavenProperty -->
-            <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+            <!--Below one uncomment when pipeline not required -->
+            <suiteXmlFile>src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>
+
+            <!--Below one is for pipeline, that time uncomment -->
+<!--            <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
           </suiteXmlFiles>
 
           <!-- This is for Allure report, we need to add this -->
