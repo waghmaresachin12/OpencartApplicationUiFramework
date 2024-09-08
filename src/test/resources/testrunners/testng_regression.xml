@@ -55,7 +55,7 @@
 <!--    </test>-->
 
 <!--    <test name="ProductInfo Page Test">-->
-<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <parameter name="browser" value="edge"></parameter>-->
 <!--        <classes>-->
 <!--            <class name="com.qa.opencart.tests.ProductInfoTest" />-->
 

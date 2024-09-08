@@ -25,6 +25,11 @@ public class OptionsManager {
 
     public ChromeOptions getChromeOptions(){
         co = new ChromeOptions();
+
+        if (Boolean.parseBoolean(prop.getProperty("remote").trim())){
+            co.setCapability("browserName", "chrome");
+        }
+
         if (Boolean.parseBoolean(prop.getProperty("headless").trim())){
 //            System.out.println("Running chrome in headless mode");
             Log.info("Running chrome in headless mode");
@@ -41,6 +46,11 @@ public class OptionsManager {
 
     public EdgeOptions getEdgeOptions(){
         eo = new EdgeOptions();
+        if (Boolean.parseBoolean(prop.getProperty("remote").trim())){
+            eo.setCapability("browserName", "edge");
+//            eo.setCapability("platform", platform.LINUX);
+        }
+
         if (Boolean.parseBoolean(prop.getProperty("headless").trim())){
             System.out.println("Running edge in headless mode");
             eo.addArguments("--headless");
@@ -55,6 +65,10 @@ public class OptionsManager {
 
     public FirefoxOptions getFirefoxOptions(){
         fo = new FirefoxOptions();
+        if (Boolean.parseBoolean(prop.getProperty("remote").trim())){
+            fo.setCapability("browserName", "firefox");
+        }
+
         if (Boolean.parseBoolean(prop.getProperty("headless").trim())){
             System.out.println("Running firefox in headless mode");
             fo.addArguments("--headless");
