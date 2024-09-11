@@ -26,10 +26,10 @@ public class BaseTests {
     protected SoftAssert softAssert;
 
     @Step("Setup: launching {0} browser & init properties")
-    @Parameters({"browser"})
+    @Parameters({"browser", "browserversion"})
     @BeforeTest
     //in below line we are getting broswer name from xml file as a parameter
-    public void setup(String browserName){
+    public void setup(String browserName, String browserVersion){
         df = new DriverFactory();
         //Below line will have the complete properties for Properties file in Prop object
         prop = df.initProp();
@@ -40,6 +40,7 @@ public class BaseTests {
             //Below line will not update actual value in Properties file but in runtime memory it will get change
             //Below line is to set browser as given in xml file but it won't actually change in prop file
             prop.setProperty("browser", browserName);
+            prop.setProperty("browserversion", browserVersion);
         }
 
         driver = df.initDriver(prop);

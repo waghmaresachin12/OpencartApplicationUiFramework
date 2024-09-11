@@ -15,7 +15,8 @@
 
 <!-- It is good practice to have separate class in separate test, don't add all classes in single test -->
     <test name="Login Page Test chrome">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="browserversion" value="124.0"/>
         <classes>
             <class name="com.qa.opencart.tests.LoginPageTest" />
 
@@ -39,7 +40,8 @@
 <!--    </test>-->
 
     <test name="Accounts Page Test">
-        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browserversion" value="113.0"/>
         <classes>
             <class name="com.qa.opencart.tests.AccountsPageTest" />
 
@@ -56,6 +58,7 @@
 
 <!--    <test name="ProductInfo Page Test">-->
 <!--        <parameter name="browser" value="edge"></parameter>-->
+<!--        <parameter name="browserversion" value="123.0"/>-->
 <!--        <classes>-->
 <!--            <class name="com.qa.opencart.tests.ProductInfoTest" />-->
 

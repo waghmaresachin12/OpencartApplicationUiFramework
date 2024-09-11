@@ -1,10 +1,13 @@
 package com.qa.opencart.factory;
 
 import com.qa.opencart.logger.Log;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class OptionsManager {
@@ -28,6 +31,12 @@ public class OptionsManager {
 
         if (Boolean.parseBoolean(prop.getProperty("remote").trim())){
             co.setCapability("browserName", "chrome");
+            co.setBrowserVersion(prop.getProperty("browserversion").trim());
+            Map<String, Object> selenoidOptions = new HashMap<>();
+            selenoidOptions.put("screenResolution", "1280x1024x24");
+            selenoidOptions.put("enableVNC", true);
+            selenoidOptions.put("name", prop.getProperty("testname"));
+            co.setCapability("selenoid:options", selenoidOptions);
         }
 
         if (Boolean.parseBoolean(prop.getProperty("headless").trim())){
@@ -44,29 +53,17 @@ public class OptionsManager {
         return co;
     }
 
-    public EdgeOptions getEdgeOptions(){
-        eo = new EdgeOptions();
-        if (Boolean.parseBoolean(prop.getProperty("remote").trim())){
-            eo.setCapability("browserName", "edge");
-//            eo.setCapability("platform", platform.LINUX);
-        }
-
-        if (Boolean.parseBoolean(prop.getProperty("headless").trim())){
-            System.out.println("Running edge in headless mode");
-            eo.addArguments("--headless");
-        }
-
-        if (Boolean.parseBoolean(prop.getProperty("incognito").trim())){
-            eo.addArguments("--incognito");
-        }
-
-        return eo;
-    }
-
     public FirefoxOptions getFirefoxOptions(){
         fo = new FirefoxOptions();
         if (Boolean.parseBoolean(prop.getProperty("remote").trim())){
             fo.setCapability("browserName", "firefox");
+            fo.setBrowserVersion(prop.getProperty("browserversion").trim());
+
+            Map<String, Object> selenoidOptions = new HashMap<>();
+            selenoidOptions.put("screenResolution", "1280x1024x24");
+            selenoidOptions.put("enableVNC", true);
+            selenoidOptions.put("name", prop.getProperty("testname"));
+            fo.setCapability("selenoid:options", selenoidOptions);
         }
 
         if (Boolean.parseBoolean(prop.getProperty("headless").trim())){
@@ -79,6 +76,25 @@ public class OptionsManager {
         }
 
         return fo;
+    }
+
+    public EdgeOptions getEdgeOptions(){
+        eo = new EdgeOptions();
+        if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+            eo.setCapability("browserName", "edge");
+            eo.setCapability("platform", Platform.LINUX);
+        }
+
+        if (Boolean.parseBoolean(prop.getProperty("headless").trim())){
+            System.out.println("Running edge in headless mode");
+            eo.addArguments("--headless");
+        }
+
+        if (Boolean.parseBoolean(prop.getProperty("incognito").trim())){
+            eo.addArguments("--incognito");
+        }
+
+        return eo;
     }
 
 }
