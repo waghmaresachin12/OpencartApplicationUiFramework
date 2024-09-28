@@ -23,6 +23,52 @@
         </classes>
     </test>
 
+    <test name="Login Page Test firefox">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="browserversion" value="125.0"/>
+        <classes>
+            <class name="com.qa.opencart.tests.LoginPageTest" />
+
+        </classes>
+    </test>
+
+    <test name="Accounts Page Test chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browserversion" value="113.0"/>
+        <classes>
+            <class name="com.qa.opencart.tests.AccountsPageTest" />
+
+        </classes>
+    </test>
+
+    <test name="Search Result Page Test firefox">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="browserversion" value="100.0"/>
+        <classes>
+            <class name="com.qa.opencart.tests.SearchResultsTest" />
+
+        </classes>
+    </test>
+
+
+    <test name="ProductInfo Page Test chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browserversion" value="122.0"/>
+        <classes>
+            <class name="com.qa.opencart.tests.ProductInfoTest" />
+
+        </classes>
+    </test>
+
+    <test name="Reg Page Test firefox">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="browserversion" value="105.0"/>
+        <classes>
+            <class name="com.qa.opencart.tests.RegPageTest" />
+
+        </classes>
+    </test>
+
 <!--    <test name="Login Page Test firefox">-->
 <!--        <parameter name="browser" value="firefox"></parameter>-->
 <!--        <classes>-->
@@ -39,36 +85,12 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="Accounts Page Test">
-        <parameter name="browser" value="chrome"></parameter>
-        <parameter name="browserversion" value="113.0"/>
-        <classes>
-            <class name="com.qa.opencart.tests.AccountsPageTest" />
 
-        </classes>
-    </test>
 
 <!--    <test name="Search Result Page Test">-->
 <!--        <parameter name="browser" value="chrome"></parameter>-->
 <!--        <classes>-->
 <!--            <class name="com.qa.opencart.tests.SearchResultsTest" />-->
-
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="ProductInfo Page Test">-->
-<!--        <parameter name="browser" value="edge"></parameter>-->
-<!--        <parameter name="browserversion" value="123.0"/>-->
-<!--        <classes>-->
-<!--            <class name="com.qa.opencart.tests.ProductInfoTest" />-->
-
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="Reg Page Test">-->
-<!--        <parameter name="browser" value="chrome"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="com.qa.opencart.tests.RegPageTest" />-->
 
 <!--        </classes>-->
 <!--    </test>-->

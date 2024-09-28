@@ -5,6 +5,9 @@ import com.qa.opencart.contants.AppContants;
 import com.qa.opencart.utils.CSVUtil;
 import com.qa.opencart.utils.ExcelUtil;
 import com.qa.opencart.utils.StringUtils;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -13,6 +16,8 @@ import org.testng.annotations.Test;
 
 public class RegPageTest extends BaseTests {
 
+    @Description("Checking navigation to registration page....")
+    @Severity(SeverityLevel.BLOCKER)
     @BeforeClass
     public void infoPageSetup(){
         registrationPage = loginPage.navigateToRegistrationPage();
@@ -38,6 +43,8 @@ public class RegPageTest extends BaseTests {
         return CSVUtil.csvData(AppContants.REGISTER_SHEET_NAME);
     }
 
+    @Description("Checking user is able to register into opencart application....")
+    @Severity(SeverityLevel.CRITICAL)
     @Step("checking user registration")
     @Test(dataProvider = "csvregdata")
     public void userRegTest(String firstName, String lastName, String telephone, String password, String subscribe){

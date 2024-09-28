@@ -2,6 +2,7 @@ package com.qa.opencart.pages;
 
 import com.qa.opencart.utils.ElementUtil;
 import com.qa.opencart.utils.TimeUtil;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,12 +32,14 @@ public class ProductInfoPage {
         eleUtil = new ElementUtil(driver);
     }
 
+    @Step("getting product headers....")
     public String getProductHeader() {
         String header = eleUtil.doGetElementText(productHeader);
         System.out.println(header);
         return header;
     }
 
+    @Step("getting product images count....")
     public int getProductImagesCount() {
         int totalImages = eleUtil.waitForElementsVisible(images, TimeUtil.DEFAULT_LONG_TIME).size();
         System.out.println("Image count for" + getProductHeader() + " : " + totalImages);
@@ -48,6 +51,7 @@ public class ProductInfoPage {
 //    Product Code: Product 18
 //    Reward Points: 800
 //    Availability: In Stock
+    @Step("getting product meta data (details)....")
     private void getProductMetaData(){
         List<WebElement> metaList = eleUtil.getElements(productMetaData);
         for(WebElement e : metaList){
@@ -60,6 +64,7 @@ public class ProductInfoPage {
 
 //    $2,000.00
 //    Ex Tax: $2,000.00
+    @Step("getting product price data....")
     private void getProductPriceData(){
         List<WebElement> priceList = eleUtil.getElements(productPriceData);
         String price = priceList.get(0).getText();
@@ -68,6 +73,7 @@ public class ProductInfoPage {
         productMap.put("exTaxPrice", exTaxPrice);
     }
 
+    @Step("Saving product details header and imagesCount in map....")
     public Map<String, String> getProductDetailsMap(){
         productMap.put("header", getProductHeader());
         productMap.put("productimages", String.valueOf(getProductImagesCount()));
