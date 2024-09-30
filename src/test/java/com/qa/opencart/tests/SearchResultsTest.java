@@ -25,7 +25,7 @@ public class SearchResultsTest extends BaseTests {
         return new Object[][]{
             {"macbook", 3},
             {"imac", 1},
-            {"samsung", 1}
+            {"samsung", 2}
         };
     }
 
