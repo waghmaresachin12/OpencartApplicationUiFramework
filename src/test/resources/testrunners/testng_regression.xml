@@ -50,7 +50,6 @@
         </classes>
     </test>
 
-
     <test name="ProductInfo Page Test chrome">
         <parameter name="browser" value="chrome"></parameter>
         <parameter name="browserversion" value="122.0"/>
@@ -69,21 +68,6 @@
         </classes>
     </test>
 
-<!--    <test name="Login Page Test firefox">-->
-<!--        <parameter name="browser" value="firefox"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="com.qa.opencart.tests.LoginPageTest" />-->
-
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="Login Page Test edge">-->
-<!--        <parameter name="browser" value="edge"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="com.qa.opencart.tests.LoginPageTest" />-->
-
-<!--        </classes>-->
-<!--    </test>-->
 
 
 
